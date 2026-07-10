@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Интерактивная аналитика YouTube-канала Павла Федоренко">
+  <title>YouTube Analytics — Павел Федоренко</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="YouTube Analytics, обзор">
+        <span class="brand-mark"><span></span></span>
+        <span>YouTube<br><strong>Analytics</strong></span>
+      </a>
+      <div class="channel-card">
+        <div class="avatar">ПФ</div>
+        <div><strong>Павел Федоренко</strong><span>@pavelfdrk · 204 тыс.</span></div>
+      </div>
+      <nav class="nav" aria-label="Разделы аналитики">
+        <button data-page="overview"><span class="nav-icon">⌂</span>Обзор</button>
+        <button data-page="themes"><span class="nav-icon">◇</span>Темы Shorts</button>
+        <button data-page="content"><span class="nav-icon">▶</span>Контент</button>
+        <button data-page="rhythm"><span class="nav-icon">▥</span>Ритм публикаций</button>
+        <button data-page="schedule"><span class="nav-icon">◷</span>День и время</button>
+        <button data-page="growth"><span class="nav-icon">↗</span>План роста</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div id="connection-card" class="connection-card">
+          <strong>Проверяю YouTube…</strong>
+          <span>Соединение с сервером</span>
+        </div>
+        <div class="data-status"><i></i><div><strong>Данные загружены</strong><span id="sidebar-date"></span></div></div>
+        <label class="upload-button" for="xlsx-input">Обновить из XLSX</label>
+        <input id="xlsx-input" type="file" accept=".xlsx" hidden>
+        <p id="upload-status" class="upload-status">Поддерживается отчёт той же структуры</p>
+        <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="mobile-menu" aria-label="Открыть меню">☰</button>
+        <div><p class="eyebrow" id="page-eyebrow">YouTube Studio · 365 дней</p><h1 id="page-title">Обзор канала</h1></div>
+        <div class="topbar-meta"><span class="source-chip">● YouTube Studio</span><span id="report-date"></span></div>
+      </header>
+      <section id="page" class="page" aria-live="polite"></section>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="demo-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
