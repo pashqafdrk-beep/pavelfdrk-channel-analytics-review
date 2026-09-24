@@ -13,3 +13,6 @@ pip install -U yt-dlp openai-whisper   # и ffmpeg
 ./transcribe.sh
 ```
 Результат: `transcripts/<id>.txt` (название, канал, дата, ссылка, текст).
+
+Не проверено, есть ли в ролике сам Якеменко (не включено в `videos.txt`):
+- «Министр раскололся. Что рассказал чиновник Амирану Сардарову»: https://www.youtube.com/watch?v=vRpSu2iJhxU
