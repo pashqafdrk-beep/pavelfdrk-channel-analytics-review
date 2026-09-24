@@ -1,0 +1,39 @@
+name: Расшифровки Якеменко
+
+on:
+  push:
+    branches: [claude/yakemenko-interview-transcripts-o97e92]
+    paths: ["yakemenko/**", ".github/workflows/yakemenko.yml"]
+  workflow_dispatch:
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Установка
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -U yt-dlp faster-whisper
+      - name: Поиск и расшифровка
+        working-directory: yakemenko
+        run: python yakemenko.py --model small
+      - name: Итог
+        if: always()
+        working-directory: yakemenko
+        run: |
+          ls -la transcripts || true
+          wc -c ВСЕ_РАСШИФРОВКИ.txt || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yakemenko-rasshifrovki
+          path: |
+            yakemenko/ВСЕ_РАСШИФРОВКИ.txt
+            yakemenko/transcripts/
+            yakemenko/found.csv
+          if-no-files-found: warn
