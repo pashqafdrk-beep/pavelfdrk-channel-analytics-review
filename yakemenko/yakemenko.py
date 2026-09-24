@@ -274,6 +274,7 @@ def transcribe(row, args):
 def main():
     global args_global
     p = argparse.ArgumentParser(description="Поиск и расшифровка интервью Василия Якеменко")
+    p.add_argument("urls", nargs="*", help="ссылки на видео: расшифровать только их, без поиска")
     p.add_argument("--only-search", action="store_true", help="только найти видео, без расшифровки")
     p.add_argument("--include-reactions", action="store_true", help="расшифровать и разборы других блогеров")
     p.add_argument("--per-query", type=int, default=50, help="сколько результатов брать на каждый запрос")
@@ -283,6 +284,13 @@ def main():
     p.add_argument("--cookies", help="файл cookies.txt (формат Netscape) для входа в YouTube")
     p.add_argument("--cookies-from-browser", help="chrome, firefox, edge… если YouTube требует вход")
     args_global = args = p.parse_args()
+
+    if args.urls:
+        for u in args.urls:
+            print(f"\n{u}")
+            transcribe({"id": re.sub(r".*(?:v=|youtu\.be/|shorts/)([\w-]{11}).*", r"\1", u), "url": u}, args)
+        combine()
+        return
 
     rows = search(args)
     take = [r for r in rows if r["kind"] == "интервью" or (args.include_reactions and r["kind"] == "разбор/реакция")]
