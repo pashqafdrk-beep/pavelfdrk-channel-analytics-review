@@ -205,8 +205,15 @@ def transcribe(row, args):
         print(f"  уже есть: {done[0].name}")
         return
 
-    with ydl({}, args) as y:
-        info = y.extract_info(row["url"], download=False)
+    info, client_opts = None, {}
+    for clients in (None, ["tv_simply"], ["web_safari"], ["mweb"], ["android_vr"]):
+        client_opts = {"extractor_args": {"youtube": {"player_client": clients}}} if clients else {}
+        try:
+            with ydl({"ignoreerrors": False, **client_opts}, args) as y:
+                info = y.extract_info(row["url"], download=False)
+            break
+        except Exception as ex:
+            print(f"  [{clients or 'обычный'}] {str(ex).splitlines()[0][:200]}")
     if not info:
         print("  не удалось открыть видео, пропускаю")
         return
@@ -217,7 +224,7 @@ def transcribe(row, args):
     if not args.whisper_always:
         with ydl({"skip_download": True, "writesubtitles": True, "writeautomaticsub": True,
                   "subtitleslangs": ["ru", "ru-orig", "ru.*"], "subtitlesformat": "vtt",
-                  "outtmpl": str(tmp / "%(id)s")}, args) as y:
+                  "outtmpl": str(tmp / "%(id)s"), **client_opts}, args) as y:
             y.download([row["url"]])
         subs = sorted(tmp.glob(f"{vid}*.vtt"))
         manual = any(k.startswith("ru") for k in (info.get("subtitles") or {}))
@@ -230,7 +237,7 @@ def transcribe(row, args):
     if not segs:
         print("  субтитров нет, расшифровываю звук через Whisper…")
         with ydl({"format": "bestaudio/best", "outtmpl": str(tmp / "%(id)s.%(ext)s"),
-                  "postprocessors": [{"key": "FFmpegExtractAudio", "preferredcodec": "m4a"}]}, args) as y:
+                  "postprocessors": [{"key": "FFmpegExtractAudio", "preferredcodec": "m4a"}], **client_opts}, args) as y:
             y.download([row["url"]])
         audio = next(tmp.glob(f"{vid}.*"), None)
         if not audio:
