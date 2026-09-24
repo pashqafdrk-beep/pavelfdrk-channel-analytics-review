@@ -3,8 +3,11 @@ name: Расшифровки Якеменко
 on:
   push:
     branches: [claude/yakemenko-interview-transcripts-o97e92]
-    paths: ["yakemenko/**", ".github/workflows/yakemenko.yml"]
+    paths: ["yakemenko/*.py", "yakemenko/videos.txt", ".github/workflows/yakemenko.yml"]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   transcribe:
@@ -21,13 +24,19 @@ jobs:
           pip install -U yt-dlp faster-whisper
       - name: Поиск и расшифровка
         working-directory: yakemenko
-        run: python yakemenko.py --model small
-      - name: Итог
-        if: always()
-        working-directory: yakemenko
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
         run: |
-          ls -la transcripts || true
-          wc -c ВСЕ_РАСШИФРОВКИ.txt || true
+          EXTRA=""
+          if [ -n "$YT_COOKIES" ]; then printf '%s\n' "$YT_COOKIES" > /tmp/cookies.txt; EXTRA="--cookies /tmp/cookies.txt"; fi
+          python yakemenko.py --model small $EXTRA
+      - name: Сохранить список найденного в репозиторий
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add yakemenko/found.csv yakemenko/found.md || true
+          git diff --cached --quiet || { git commit -m "Обновить список видео Якеменко [skip ci]" && git push; }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -36,4 +45,5 @@ jobs:
             yakemenko/ВСЕ_РАСШИФРОВКИ.txt
             yakemenko/transcripts/
             yakemenko/found.csv
+            yakemenko/found.md
           if-no-files-found: warn

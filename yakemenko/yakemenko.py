@@ -57,6 +57,8 @@ def ydl(opts, args):
     base = {"quiet": True, "no_warnings": True, "ignoreerrors": True}
     if args.cookies_from_browser:
         base["cookiesfrombrowser"] = (args.cookies_from_browser,)
+    if args.cookies:
+        base["cookiefile"] = args.cookies
     base.update(opts)
     return yt_dlp.YoutubeDL(base)
 
@@ -134,6 +136,13 @@ def search(args):
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()) if rows else ["id"], delimiter=";")
         w.writeheader()
         w.writerows(rows)
+    md = ["# Найденные видео с Василием Якеменко", "",
+          f"Всего: {len(rows)}. Интервью и подкасты: {sum(r['kind'] == 'интервью' for r in rows)}.", "",
+          "| Тип | Мин | Название | Канал |", "|---|---|---|---|"]
+    for r in rows:
+        t = r["title"].replace("|", "/")
+        md.append(f"| {r['kind']} | {r['minutes']} | [{t}]({r['url']}) | {r['channel'].replace('|', '/')} |")
+    (HERE / "found.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return rows
 
 
@@ -270,6 +279,7 @@ def main():
     p.add_argument("--min-minutes", type=int, default=10, help="отсеять ролики короче (минут)")
     p.add_argument("--model", default="medium", help="модель Whisper: small, medium, large-v3")
     p.add_argument("--whisper-always", action="store_true", help="не брать субтитры YouTube, всё через Whisper")
+    p.add_argument("--cookies", help="файл cookies.txt (формат Netscape) для входа в YouTube")
     p.add_argument("--cookies-from-browser", help="chrome, firefox, edge… если YouTube требует вход")
     args_global = args = p.parse_args()
 
