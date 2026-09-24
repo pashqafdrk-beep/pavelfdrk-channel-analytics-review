@@ -245,8 +245,9 @@ def transcribe(row, args):
 
     if not segs:
         print("  субтитров нет, расшифровываю звук через Whisper…")
-        with ydl({"format": "bestaudio/best", "outtmpl": str(tmp / "%(id)s.%(ext)s"),
-                  "postprocessors": [{"key": "FFmpegExtractAudio", "preferredcodec": "m4a"}], **client_opts}, args) as y:
+        # Звук берём как есть: faster-whisper сам читает m4a/webm, отдельный ffmpeg не нужен
+        with ydl({"format": "bestaudio[ext=m4a]/bestaudio/best", "outtmpl": str(tmp / "%(id)s.%(ext)s"),
+                  **client_opts}, args) as y:
             y.download([row["url"]])
         audio = next(tmp.glob(f"{vid}.*"), None)
         if not audio:
