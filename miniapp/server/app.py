@@ -48,7 +48,7 @@ class App:
             return 200, {
                 "topics": TOPICS,
                 "videos": [public_video(v) for v in self.db.videos()],
-                "books": [{k: b[k] for k in ("id", "title", "description", "cover", "link")}
+                "books": [{k: b[k] for k in ("id", "title", "description", "series", "cover", "link")}
                           for b in self.db.books()],
                 "texts": self.db.texts(),
             }

@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS books (
   description TEXT NOT NULL DEFAULT '',
   cover TEXT NOT NULL DEFAULT '',
   link TEXT NOT NULL DEFAULT '',
+  series TEXT NOT NULL DEFAULT '',
   position INTEGER NOT NULL DEFAULT 0,
   hidden INTEGER NOT NULL DEFAULT 0
 );
@@ -43,10 +44,19 @@ CREATE TABLE IF NOT EXISTS meta (
 );
 """
 
-# Заглушки: настоящие описания, ссылки и тексты заполняются в админке.
+# Книги из базы «Книги» в Ноушене. Описания дословно взяты из подзаголовков рукописей.
+# Ссылки «Купить» и обложки заполняются в админке.
+SERIES = "Серия «Тревожные расстройства»"
 DEFAULT_BOOKS = [
-    ("Три уровня тревоги", "Описание книги появится здесь.", 1),
-    ("Жить чужой жизнью", "Описание книги появится здесь.", 2),
+    ("Три уровня тревоги", "Трёхуровневая модель: как устроена тревога и почему она становится хронической", ""),
+    ("Паника", "Как перестать бояться, что станет плохо", SERIES),
+    ("Беспокойный ум", "Почему мысли не останавливаются и как вернуть себе внутреннюю тишину", SERIES),
+    ("Мысли, которые пугают", "Почему в голову приходит самое страшное и как перестать жить вокруг этих мыслей", SERIES),
+    ("Страх заболеть", "Почему тело становится источником постоянной угрозы и как вернуть себе спокойствие", SERIES),
+    ("Страх чужого мнения", "Почему нас так пугает оценка окружающих и как перестать зависеть от неё", SERIES),
+    ("Жить чужой жизнью", "Как общество заставляет нас быть удобными, успешными и одинокими", ""),
+    ("Ловушки, которые мы называем собой", "Восемнадцать сценариев, которые вы принимаете за свой характер", ""),
+    ("Эпоха тревоги", "Как современное общество формирует наши страхи", ""),
 ]
 DEFAULT_TEXTS = {
     "about_name": "Павел Федоренко",
@@ -70,7 +80,8 @@ class Database:
             self.conn.executescript(SCHEMA)
             if not self.conn.execute("SELECT 1 FROM books LIMIT 1").fetchone():
                 self.conn.executemany(
-                    "INSERT INTO books (title, description, position) VALUES (?, ?, ?)", DEFAULT_BOOKS
+                    "INSERT INTO books (title, description, series, position) VALUES (?, ?, ?, ?)",
+                    [(t, d, s, i + 1) for i, (t, d, s) in enumerate(DEFAULT_BOOKS)],
                 )
             self.conn.executemany(
                 "INSERT OR IGNORE INTO texts (key, value) VALUES (?, ?)", DEFAULT_TEXTS.items()
@@ -123,7 +134,7 @@ class Database:
         return self._all(f"SELECT * FROM books {where} ORDER BY position, id")
 
     def update_book(self, book_id, fields):
-        allowed = {"title", "description", "cover", "link", "position", "hidden"}
+        allowed = {"title", "description", "series", "cover", "link", "position", "hidden"}
         fields = {k: v for k, v in fields.items() if k in allowed}
         if not fields:
             return 0

@@ -136,6 +136,7 @@
         b.cover ? h('img', { class: 'cover', src: b.cover, alt: '' }) : h('div', { class: 'cover' }, b.title),
         h('div', {},
           h('div', { class: 'card-title' }, b.title),
+          b.series && h('div', { class: 'series' }, b.series),
           h('p', { class: 'muted' }, b.description),
           b.link ? h('button', { class: 'btn', onclick: () => { track('book_click', String(b.id)); openLink(b.link); } }, 'Купить')
                  : h('span', { class: 'muted' }, 'Ссылка скоро появится')))))
@@ -206,6 +207,7 @@
       books.map(b => h('div', { class: 'card admin-item' },
         field('Название', b.title, v => api('admin/book', { id: b.id, title: v })),
         field('Описание', b.description, v => api('admin/book', { id: b.id, description: v }), true),
+        field('Серия', b.series, v => api('admin/book', { id: b.id, series: v })),
         field('Обложка (ссылка https://)', b.cover, v => api('admin/book', { id: b.id, cover: v })),
         field('Где купить (ссылка https://)', b.link, v => api('admin/book', { id: b.id, link: v })),
         field('Порядок', String(b.position), v => api('admin/book', { id: b.id, position: parseInt(v, 10) || 0 })))),

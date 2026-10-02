@@ -137,7 +137,11 @@ class ApiTest(unittest.TestCase):
         self.assertEqual(by_id["v1"]["format"], "video")
         self.assertEqual(by_id["v1"]["topic"], "Панические атаки")
         self.assertEqual(by_id["v2"]["format"], "shorts")
-        self.assertEqual(len(content["books"]), 2)
+        books = content["books"]
+        self.assertEqual(len(books), 9)
+        self.assertEqual(books[0]["title"], "Три уровня тревоги")
+        self.assertEqual(books[1]["series"], "Серия «Тревожные расстройства»")
+        self.assertTrue(all(b["description"] for b in books))
         self.assertNotIn("hidden", by_id["v1"])
 
     def test_events_counted_without_personal_data(self):
