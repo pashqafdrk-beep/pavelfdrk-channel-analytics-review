@@ -1,0 +1,10 @@
+[Unit]
+Description=Обновление видео с YouTube раз в 6 часов
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=6h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

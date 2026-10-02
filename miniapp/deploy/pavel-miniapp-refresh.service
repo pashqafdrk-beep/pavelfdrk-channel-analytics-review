@@ -1,0 +1,13 @@
+[Unit]
+Description=Обновление видео с YouTube
+
+[Service]
+Type=oneshot
+User=miniapp
+EnvironmentFile=/etc/pavel-miniapp.env
+WorkingDirectory=/opt/pavel-miniapp/server
+ExecStart=/usr/bin/python3 app.py refresh
+StateDirectory=pavel-miniapp
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true

@@ -1,0 +1,18 @@
+[Unit]
+Description=Мини-приложение Павла Федоренко
+After=network.target
+
+[Service]
+User=miniapp
+EnvironmentFile=/etc/pavel-miniapp.env
+WorkingDirectory=/opt/pavel-miniapp/server
+ExecStart=/usr/bin/python3 app.py
+Restart=always
+StateDirectory=pavel-miniapp
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
