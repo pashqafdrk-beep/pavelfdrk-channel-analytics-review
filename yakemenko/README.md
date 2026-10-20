@@ -34,3 +34,8 @@
 
 - Второе интервью, канал «Достойный», RUTUBE: https://rutube.ru/video/6da90b447067f95510c9dbccc0f3d9c7/
 - Интервью Ксении Собчак, «Дождь», 2012: https://tvrain.tv/teleshow/sobchak_zhivem/vasiliy_yakemenko_s_zhenami_takaya_problema_oni_segodnya_idut_za_toboy_a_zavtra_idut_za_kem_to_drugi-297143/
+
+## Алексей Красиков (психолог)
+
+Та же программа, параметр `--person krasikov`. Однофамилец, хоккейный вратарь Алексей Красиков, отмечается в списке отдельно и не расшифровывается.
+Результаты лежат в папке `krasikov/`.

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
 Находит на YouTube все интервью и подкасты с Василием Якеменко
+(или с психологом Алексеем Красиковым: --person krasikov)
 и делает по каждому текстовую расшифровку.
 
 Что делает программа:
   1. Ищет видео по набору запросов на YouTube и добавляет ролики из videos.txt
      (там можно указывать отдельные видео, плейлисты и каналы).
-  2. Отбирает ролики, где в названии или описании есть «Якеменко».
-     Отсеивает шортсы, ролики про Бориса Якеменко и разборы других блогеров.
+  2. Отбирает ролики, где в названии или описании есть фамилия героя.
+     Отсеивает шортсы, однофамильцев и разборы других блогеров.
   3. Сохраняет список в found.csv.
   4. Для каждого видео берёт русские субтитры YouTube. Если их нет,
      скачивает звук и расшифровывает его через faster-whisper.
@@ -35,19 +36,60 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 
-QUERIES = [
-    "Василий Якеменко интервью",
-    "Василий Якеменко подкаст",
-    "Василий Якеменко разговор",
-    "Якеменко экс-министр",
-    "Якеменко Наши Росмолодежь интервью",
-    "Василий Якеменко",
-    "Василий Якименко интервью",
-]
+PROFILES = {
+    "yakemenko": {
+        "title": "Василий Якеменко",
+        "dir": ".",
+        "queries": [
+            "Василий Якеменко интервью",
+            "Василий Якеменко подкаст",
+            "Василий Якеменко разговор",
+            "Якеменко экс-министр",
+            "Якеменко Наши Росмолодежь интервью",
+            "Василий Якеменко",
+            "Василий Якименко интервью",
+        ],
+        "name": r"як[еи]менк",
+        # Чужие люди с той же фамилией: ролик отмечается отдельно, если имя героя не названо
+        "other": r"борис",
+        "other_label": "Борис Якеменко",
+        "must": "василий",
+        "seeds_file": "videos.txt",
+        "seeds": [],
+    },
+    "krasikov": {
+        "title": "Алексей Красиков (психолог)",
+        "dir": "krasikov",
+        "queries": [
+            "Алексей Красиков психолог интервью",
+            "Алексей Красиков психолог подкаст",
+            "Алексей Красиков психотерапевт",
+            "Красиков психолог неврозы",
+            "Красиков психолог тревога",
+            "Алексей Красиков",
+            "Красиков Алексей интервью",
+        ],
+        "name": r"красиков",
+        # Однофамилец: хоккейный вратарь Алексей Красиков
+        "other": r"хокке|вратар|спартак|кхл|ред старз|red stars|шайб|матч",
+        "other_label": "другой человек (хоккеист)",
+        "must": None,
+        "seeds_file": None,
+        "seeds": [
+            "https://www.youtube.com/watch?v=wA2Vn2E8YKc",
+            "https://www.youtube.com/watch?v=Ui9aGxJ6c6w",
+            "https://www.youtube.com/watch?v=pvHjNxpFQko",
+            "https://www.youtube.com/watch?v=Y7Z7UJASPDg",
+            "https://www.youtube.com/watch?v=lgygelgZa80",
+            "https://www.youtube.com/watch?v=6roPs7xSLHE",
+            "https://www.youtube.com/watch?v=zx_UA6FTT4A",
+        ],
+    },
+}
+P = PROFILES["yakemenko"]
+OUT = HERE
 
-NAME = re.compile(r"як[еи]менк", re.I)
-BROTHER = re.compile(r"борис", re.I)
-# Признаки чужих разборов: там Якеменко почти не говорит сам.
+# Признаки чужих разборов: там герой почти не говорит сам.
 REACTION = re.compile(
     r"разбор|посмотрел|реакци|обсудим|манипуляц|демагог|реагиру|что сказал|что рассказал", re.I
 )
@@ -86,10 +128,10 @@ def classify(e):
     title = e.get("title") or ""
     desc = e.get("description") or ""
     text = f"{title}\n{desc}"
-    if not NAME.search(text):
+    if not re.search(P["name"], text, re.I):
         return "нет упоминания"
-    if BROTHER.search(title) and "василий" not in title.lower():
-        return "Борис Якеменко"
+    if re.search(P["other"], text, re.I) and not (P["must"] and P["must"] in title.lower()):
+        return P["other_label"]
     dur = e.get("duration") or 0
     if dur and dur < args_global.min_minutes * 60:
         return "короткое"
@@ -100,13 +142,12 @@ def classify(e):
 
 def search(args):
     found = {}
-    sources = [f"ytsearch{args.per_query}:{q}" for q in QUERIES]
-    seeds = HERE / "videos.txt"
-    if seeds.exists():
-        seeds_list = [l.strip() for l in seeds.read_text(encoding="utf-8").splitlines()
-                      if l.strip() and not l.startswith("#")]
-    else:
-        seeds_list = []
+    sources = [f"ytsearch{args.per_query}:{q}" for q in P["queries"]]
+    seeds_list = list(P["seeds"])
+    seeds = HERE / P["seeds_file"] if P["seeds_file"] else None
+    if seeds and seeds.exists():
+        seeds_list += [l.strip() for l in seeds.read_text(encoding="utf-8").splitlines()
+                       if l.strip() and not l.startswith("#")]
     for src in sources + seeds_list:
         print(f"Поиск: {src}")
         for e in flat_entries(src, args):
@@ -120,7 +161,7 @@ def search(args):
     for vid, e in found.items():
         kind = classify(e)
         if e["_seed"] and kind in ("нет упоминания",):
-            kind = "интервью"  # ручной список и канал КиноКлуба берём как есть
+            kind = "интервью"  # ручной список берём как есть
         rows.append({
             "id": vid,
             "title": e.get("title") or "",
@@ -132,17 +173,17 @@ def search(args):
         })
     rows = [r for r in rows if r["kind"] != "нет упоминания"]
     rows.sort(key=lambda r: (r["kind"] != "интервью", r["title"]))
-    with open(HERE / "found.csv", "w", newline="", encoding="utf-8-sig") as f:
+    with open(OUT / "found.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()) if rows else ["id"], delimiter=";")
         w.writeheader()
         w.writerows(rows)
-    md = ["# Найденные видео с Василием Якеменко", "",
+    md = ["# Найденные видео: " + P["title"], "",
           f"Всего: {len(rows)}. Интервью и подкасты: {sum(r['kind'] == 'интервью' for r in rows)}.", "",
           "| Тип | Мин | Название | Канал |", "|---|---|---|---|"]
     for r in rows:
         t = r["title"].replace("|", "/")
         md.append(f"| {r['kind']} | {r['minutes']} | [{t}]({r['url']}) | {r['channel'].replace('|', '/')} |")
-    (HERE / "found.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    (OUT / "found.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return rows
 
 
@@ -204,8 +245,8 @@ def safe(name):
 
 
 def transcribe(row, args):
-    out_dir = HERE / "transcripts"
-    tmp = HERE / "tmp"
+    out_dir = OUT / "transcripts"
+    tmp = OUT / "tmp"
     out_dir.mkdir(exist_ok=True)
     tmp.mkdir(exist_ok=True)
     vid = row["id"]
@@ -272,8 +313,10 @@ def transcribe(row, args):
 
 
 def main():
-    global args_global
+    global args_global, P, OUT
     p = argparse.ArgumentParser(description="Поиск и расшифровка интервью Василия Якеменко")
+    p.add_argument("--person", choices=list(PROFILES), default="yakemenko",
+                   help="чьи интервью искать: yakemenko или krasikov")
     p.add_argument("urls", nargs="*", help="ссылки на видео: расшифровать только их, без поиска")
     p.add_argument("--only-search", action="store_true", help="только найти видео, без расшифровки")
     p.add_argument("--include-reactions", action="store_true", help="расшифровать и разборы других блогеров")
@@ -284,6 +327,10 @@ def main():
     p.add_argument("--cookies", help="файл cookies.txt (формат Netscape) для входа в YouTube")
     p.add_argument("--cookies-from-browser", help="chrome, firefox, edge… если YouTube требует вход")
     args_global = args = p.parse_args()
+    P = PROFILES[args.person]
+    OUT = (HERE / P["dir"]).resolve()
+    OUT.mkdir(exist_ok=True)
+    print(f"Ищу интервью: {P['title']}. Результаты в папке: {OUT}")
 
     if args.urls:
         for u in args.urls:
@@ -311,11 +358,11 @@ def main():
 
 def combine():
     """Склеивает все расшифровки в один файл."""
-    files = sorted((HERE / "transcripts").glob("*.txt"))
+    files = sorted((OUT / "transcripts").glob("*.txt"))
     if not files:
         print("\nРасшифровок нет. Посмотрите ошибки выше.")
         return
-    total = HERE / "ВСЕ_РАСШИФРОВКИ.txt"
+    total = OUT / "ВСЕ_РАСШИФРОВКИ.txt"
     sep = "\n\n" + "=" * 80 + "\n\n"
     total.write_text(sep.join(f.read_text(encoding="utf-8") for f in files), encoding="utf-8")
     print(f"\nГотово. Отдельные тексты: transcripts/ ({len(files)} шт.)")
