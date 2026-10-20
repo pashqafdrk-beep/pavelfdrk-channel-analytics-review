@@ -1,6 +1,6 @@
-# Найденные видео с Василием Якеменко
+# Найденные видео: Василий Якеменко
 
-Всего: 110. Интервью и подкасты: 75.
+Всего: 108. Интервью и подкасты: 75.
 
 | Тип | Мин | Название | Канал |
 |---|---|---|---|
@@ -11,59 +11,60 @@
 | интервью | 5 | [Experiment: How deprivation creates the life of your dreams. Part 1.](https://www.youtube.com/watch?v=QohSHW03nhc) |  |
 | интервью | 3 | [Experiment: How deprivation creates the life of your dreams. Part 2](https://www.youtube.com/watch?v=7Jch00KD-B0) |  |
 | интервью | 6 | [Experiment: How deprivation creates the life of your dreams. Part 3](https://www.youtube.com/watch?v=70ry3ywKRmk) |  |
-| интервью | 11 | [Martin Scorsese on Film Language and Violence / Interview / Russian Voiceover](https://www.youtube.com/watch?v=Ix9upAa5k9M) |  |
+| интервью | 64 | [GREAT CONVERSATION #ШВК "Keys to Reality" Dmitry Merkulov 04/26/2017](https://www.youtube.com/watch?v=hkO9vzd5wQI) | Большой Разговор |
+| интервью | 2 | [How a reading group actually works? Details in the description](https://www.youtube.com/watch?v=SX6BB7XSXpw) |  |
 | интервью | 4 | [On the point of assembly of consciousness. Details in the description](https://www.youtube.com/watch?v=7UkDEUvqilA) |  |
-| интервью | 8 | [September 23, 2026](https://www.youtube.com/watch?v=unA1mlLY6YI) |  |
+| интервью | 52 | [Online meeting with Valentina Merinova: Unpacking the themes of "Oppenheimer"](https://www.youtube.com/watch?v=QGbmFB7Rzoo) |  |
 | интервью | 10 | [Surkov's associate Yakemenko on how Putin's inner circle makes billions](https://www.youtube.com/watch?v=Arqoe3wIONw) | Om TV |
 | интервью | 62 | [Vasily Yakemenko. How to read books? Why read books?](https://www.youtube.com/watch?v=DUskUb4VaH4) | Книжные Маяки России |
 | интервью | 1 | [Vasya, what will happen to a person at Seliger? Details in the description](https://www.youtube.com/watch?v=b69YBKlKE3I) |  |
 | интервью | 60 | [WHO TO LISTEN TO? WHO TO PLEASE?](https://www.youtube.com/watch?v=iJ6Fl2oJUoI) | Читаем себя |
 | интервью | 28 | [What is money? Vasily Yakemenko. Start at 8 a.m.](https://www.youtube.com/watch?v=MrMywaPVdkY) | ШКОЛА ВЕЛИКИХ КНИГ |
 | интервью | 5 | [Who are the people spending 5 days with us side-by-side in tents?) Details in the description](https://www.youtube.com/watch?v=cuUnVc7UU5c) |  |
-| интервью | 2 | [You aren't reading books. You're just looking at letters👇](https://www.youtube.com/watch?v=PY0njP64ZEM) |  |
+| интервью | 8 | [Why We Read Books But Don't Know How to Understand Them](https://www.youtube.com/watch?v=unA1mlLY6YI) |  |
 | интервью | 104 | [«Семиотика» БОЛЬШОЙ РАЗГОВОР с Якеменко Василием #ШВК](https://www.youtube.com/watch?v=oreaTrAwEv0) | КиноКлуб  Василий Якеменко  |
 | интервью | 99 | [БОЛЬШОЙ РАЗГОВОР #ШВК "Безумный Мир" Василий Якеменко 26.11.2018](https://www.youtube.com/watch?v=FxIm_4dXUKs) | Большой Разговор |
 | интервью | 124 | [БОЛЬШОЙ РАЗГОВОР #ШВК "Жизнь по предоплате" Василий Якеменко и Мария Соболева](https://www.youtube.com/watch?v=c0lilOU0mPs) | Большой Разговор |
-| интервью | 64 | [БОЛЬШОЙ РАЗГОВОР #ШВК "Ключи Реальности" Меркулов Дмитрий 26.04.2017](https://www.youtube.com/watch?v=hkO9vzd5wQI) | Большой Разговор |
 | интервью | 113 | [Большой Разговор "Развод с родителями", Василий Якеменко и Мария Соболева, 28.06.2024](https://www.youtube.com/watch?v=3H1kqcXUBF4) | Большой Разговор |
 | интервью | 107 | [Большой Разговор "Спанч Боб" Якеменко Василий и Соболева Мария 25.03.2019](https://www.youtube.com/watch?v=sE9YCAPWFuU) | Большой Разговор |
 | интервью | 126 | [Большой Разговор #ШВК "Кооператив Взаимопомощь" Василий Якеменко и Мария Соболева 04.10.2020](https://www.youtube.com/watch?v=BRDj0Df2twU) | Большой Разговор |
 | интервью | 23 | [В чем нужно ПРИЗНАТЬСЯ себе? Есть три типа людей: гении, женщины и НЕУДАЧНИКИ. Василий Якеменко.](https://www.youtube.com/watch?v=_rE8_hsL1Ic) | Игорь Егоров |
+| интервью | 65 | [ВАСИЛИЙ ЯКЕМЕНКО: С чего вы взяли что деньги существуют?](https://www.youtube.com/watch?v=ljNnGyXNrIM) | lusistarpit |
 | интервью | 29 | [Василий Якеменко "Технология добра//Беги за мной"](https://www.youtube.com/watch?v=Hm-NO8JIU6o) | EinzatsAA |
 | интервью | 10 | [Василий Якеменко в "Позднем разговоре" ч.2](https://www.youtube.com/watch?v=tphv4FWjYqg) | fnebvideo |
 | интервью | 96 | [Василий Якеменко на слёте Клуба JUST BUSINESS / апрель 2022](https://www.youtube.com/watch?v=jzO344r-G0g) | JUST BUSINESS |
 | интервью | 63 | [Василий Якеменко. Как читать книги? Зачем читать книги?](https://www.youtube.com/watch?v=dAhkL3rD9Es) | Книжные Маяки России |
 | интервью | 87 | [Василий Якеменко: "Через 25 лет не будет никого, включая их детей." @Historical_Chtivo](https://www.youtube.com/watch?v=Dg4zl4ycZ4E) | Историческое Чтиво |
-| интервью | 78 | [Василий Якеменко: «проснулся с мыслью, где взять денег? Значит, у тебя всё прекрасно»](https://www.youtube.com/watch?v=qIaenMVKpdI) | Денис Царюк |
 | интервью | 96 | [Василий Якеменко: Женщины разучились любить без денег](https://www.youtube.com/watch?v=Mo1hBB37YAQ) | Денис Царюк |
 | интервью | 57 | [Василий Якеменко: Правда о 'Селигере', Кино и Будущем Молодежи](https://www.youtube.com/watch?v=NXLEaSbH1vg) | Цена Слова |
 | интервью | 79 | [Василий Якеменко: Эти ОШИБКИ держат тебя В БЕДНОСТИ / Что МЕШАЕТ тебе стать БОГАТЫМ?](https://www.youtube.com/watch?v=fR1GYzoMff4) | Руслан Сухий / Инвестиции Недвижимость Бизнес  |
-| интервью | 10 | [Василий Якименко Команда 2018](https://www.youtube.com/watch?v=md_UW0ziMAU) | Виктор Ялфимов |
+| интервью | 78 | [Василий Якеменко: почему вы не знаете, чего хотите на самом деле](https://www.youtube.com/watch?v=qIaenMVKpdI) | Денис Царюк |
 | интервью | 1 | [Волк с Уолл стрит](https://www.youtube.com/watch?v=2GdZnOYpVXA) |  |
-| интервью | 53 | [Вступительная речь для информпотока и предпринимателей / Василий Якеменко / Лекториум](https://www.youtube.com/watch?v=antHUUP0kOk) | Лекториум |
+| интервью | 2 | [Вы не читаете книги. Вы смотрите на буквы👇](https://www.youtube.com/watch?v=PY0njP64ZEM) |  |
 | интервью | 70 | [ГОСУДАРСТВО БЕЗ ПРАВИЛ - НИКАКИХ НОРМАТИВОВ / Василий Якеменко](https://www.youtube.com/watch?v=pmOEKY9JyKQ) | Подкаст Вадима Коженова |
 | интервью | 26 | [Дело и природа желаний](https://www.youtube.com/watch?v=EF4xRIoKvvo) | Большой Разговор |
 | интервью | 100 | [День открытых дверей 30.08.2022 / Василий Якеменко](https://www.youtube.com/watch?v=M2G4J1ZQEpE) | JUST BUSINESS |
 | интервью | 19 | [Дешёвая молодежь, Василий Якеменко, Селигер, Наши, Клаус Шваб и интернет, Сергей Ступников](https://www.youtube.com/watch?v=Z96cRf1DCr4) | Горбатинская Правда |
 | интервью | 14 | [Интервью Якеменко, статьи Дугина и Суркова — что они говорят о России и о войне (Eng sub)  @Max_Katz](https://www.youtube.com/watch?v=GMpS8TJM778) | Максим Кац |
 | интервью | 96 | [Интервью с Василием Якеменко](https://www.youtube.com/watch?v=MEdFguXHCHc) | КиноКлуб  Василий Якеменко  |
-| интервью | 206 | [Исповедь метафизика-рогоносца](https://www.youtube.com/watch?v=Mzrs-8xqTTs) | Remi Meisner |
 | интервью | 82 | [Как перестать быть экономической машиной — Якеменко](https://www.youtube.com/watch?v=fmVj4xbK798) | Денис Царюк |
 | интервью | 69 | [Кто УПРАВЛЯЕТ Вами? О «Человечности» Путина и Сознании. Есть ли будущее у РОССИИ?  Василий Якеменко](https://www.youtube.com/watch?v=k5FRFH_CTms) | Не стой на месте |
 | интервью | 67 | [Кто станет богатым в 2026 Василий Якеменко ](https://www.youtube.com/watch?v=GP8VuU4imVg) | СДЕЛКА |
 | интервью | 35 | [Лидерство. Цели и задачи Селигера 2010 / Василий Якеменко / Лекториум](https://www.youtube.com/watch?v=nWD-YKp5Txs) | Лекториум |
 | интервью | 12 | [Личная эффективность — это ловушка / Якеменко по понедельникам](https://www.youtube.com/watch?v=hiarSMA7OIY) | Денис Царюк |
+| интервью | 11 | [Мартин Скорсезе - о киноязыке и насилии в фильмах / Интервью /Русская озвучка](https://www.youtube.com/watch?v=Ix9upAa5k9M) |  |
 | интервью | 123 | [НАЗАД В БУДУЩЕЕ / Василий Якеменко и Мария Соболева / БОЛЬШОЙ РАЗГОВОР #ШВК / 08.10.2024](https://www.youtube.com/watch?v=sY14gBSJNuE) | Читаем себя |
 | интервью | 73 | [О деньгах. Разговор о бедности и богатстве. Мышление богатого и бедного человека. Василий Якеменко](https://www.youtube.com/watch?v=ENeFRA5XjDs) | Философия денег |
 | интервью | 1 | [О проекте](https://www.youtube.com/watch?v=GtOUy737xkI) |  |
 | интервью | 70 | [Об образе будущего / Василий Якеменко / Лекториум](https://www.youtube.com/watch?v=b_EsvXUjG8o) | Лекториум |
 | интервью | 2 | [Обратная связь от Участников КиноКлуба](https://www.youtube.com/watch?v=JZf3pSHbL0s) |  |
-| интервью | 52 | [Онлайн-встреча с Валентиной Мериновой по смыслам фильма «Оппенгеймер»](https://www.youtube.com/watch?v=QGbmFB7Rzoo) |  |
 | интервью | 131 | [Откровения экс-министра: путь во власть, «крыша» и как вывести 10000 на площадь / Якеменко Василий](https://www.youtube.com/watch?v=jDmEmZCH8DQ) | Гладкий Я - Подкаст Губина Максима |
 | интервью | 31 | [Откровенно про бизнес и не только! Василий Якеменко / Алиса про business](https://www.youtube.com/watch?v=dI2L7MW8_bs) | Алиса про business |
 | интервью | 2 | [Откровенное интервью создателя «Наших». О деньгах и взглядах элит](https://www.youtube.com/watch?v=fSLSpXvE1y0) | Meduza |
+| интервью | 66 | [Почему вы до сих пор не думаете: горькая правда о нас](https://www.youtube.com/watch?v=zjFlsuIUP4U) | Денис Царюк |
 | интервью | 43 | [Продолжение разговора о Богатстве и Бедности. Экс-министр РФ Василий Якеменко.](https://www.youtube.com/watch?v=pTvC2JoSTuA) | Александр Воловик / Быть плохим |
 | интервью | 86 | [Разговор на материале многосерийного фильма «ЧЕРНОБЫЛЬ» / Василий Якеменко / 25 июля 2025](https://www.youtube.com/watch?v=Cekm5QAoLIY) | Читаем себя |
+| интервью | 57 | [Разговор с Василием Якеменко: как найти свой путь?](https://www.youtube.com/watch?v=I6ronfCakAU) | Денис Царюк |
 | интервью | 47 | [СОБЕСЕДОВАНИЕ С САМИМ СОБОЙ](https://www.youtube.com/watch?v=IMeeGxVv7Eg) | Читаем себя |
 | интервью | 48 | [Секс со старухой как феномен.  Василий Якеменко](https://www.youtube.com/watch?v=EMsXdApCisg) | КиноКлуб  Василий Якеменко  |
 | интервью | 13 | [Секс-работницы из Кремля. Как экс-министр поставлял девушек для элиты](https://www.youtube.com/watch?v=7Rvavje6iW0) | Популярная политика |
@@ -75,30 +76,25 @@
 | интервью | 81 | [Экс-министр Якеменко: почему ты бедный и как стать богатым](https://www.youtube.com/watch?v=pAQisPgCOdk) | Денис Царюк |
 | интервью | 61 | [Экс-министр: Единственная причина зачем быть в отношениях в 2025 году](https://www.youtube.com/watch?v=5nxwuQafa6E) | АНЖЕЛИА |
 | интервью | 59 | [Якеменко на Дожде, как уж на сковородке.](https://www.youtube.com/watch?v=XAANhlSUDuA) | Noxchyn |
-| интервью | 66 | [Якеменко: Почему 99% людей не могут думать](https://www.youtube.com/watch?v=zjFlsuIUP4U) | Денис Царюк |
 | интервью | 68 | [Якеменко: единственный способ найти гармонию в жизни](https://www.youtube.com/watch?v=LaTLZrAI8Og) | Денис Царюк |
 | интервью | 67 | [Якеменко: причина что-либо делать — это причина этого не делать](https://www.youtube.com/watch?v=GY_Pq_mOyJ4) | Разговор О... and Денис Царюк |
 | интервью | 5 | [— Вась, давай поговорим еще про формат, палатки, лагерь.. О чем это по смыслу?) Подробности 👇](https://www.youtube.com/watch?v=uprT29i_8oo) |  |
 | короткое | 3 | [09.11 Бизнес-завтрак с Василием Якеменко](https://www.youtube.com/watch?v=JbDgBB29msU) | Бизнес-клуб DP |
-| короткое | 4 | [«ЖТВ» / «Машук 2010»: Василий Якеменко на Машуке (Выпуск 7)](https://www.youtube.com/watch?v=WA4TM9m8nBc) | Андрей Жариков |
 | короткое | 1 | [Адвокат Кашина: Якименко не прав](https://www.youtube.com/watch?v=KsbmkT_F99E) | Телеканал Дождь |
-| Борис Якеменко | 3 | [Акция «Наша победа»: Борис Якеменко](https://www.youtube.com/watch?v=LYygyokAtBo) | Андрей Жариков |
 | короткое | 5 | [Атаку на «Коммерсантъ» заказали «Наши». Доказано](https://www.youtube.com/watch?v=VDQgueEgoMQ) | Телеканал Дождь |
 | короткое | 9 | [Василий Якеменко в "Позднем разговоре" ч.1](https://www.youtube.com/watch?v=rEzE5oGsIRo) | fnebvideo |
 | короткое | 10 | [Василий Якеменко в "Позднем разговоре" ч.3](https://www.youtube.com/watch?v=txFVTn9HIOk) | fnebvideo |
 | короткое | 9 | [Василий Якеменко в "Позднем разговоре" ч.4](https://www.youtube.com/watch?v=YfHmi9pStWQ) | fnebvideo |
+| короткое | 1 | [Василий Якеменко в самом дорогом ресторане Москвы](https://www.youtube.com/watch?v=3l6_408Y4XI) | uM9nOJIb3OBATEJI9 |
 | короткое | 4 | [Василий Якеменко надувает "Партию власти"](https://www.youtube.com/watch?v=QdMF5ubk0J8) | Firstnews Ru |
 | короткое | 6 | [Василий Якеменко о Медведеве и Путине и о ВУЗах](https://www.youtube.com/watch?v=H70nNMdErMM) | Николай Серов |
 | короткое | 2 | [Василий Якеменко о Путине](https://www.youtube.com/watch?v=qUjbkC5OFE4) | Levnik |
 | короткое | 1 | [Василий Якеменко покинул пост руководителя Федерального агентства по делам молодежи, а Владислав Сур](https://www.youtube.com/watch?v=MhT41uZ_Oog) | станислав стасов |
+| короткое | 4 | [Василий Якеменко: как улучшить Мирозданье /#НоваяАрхитектураЧеловечества / #Вселюдство/ #AllHumanity](https://www.youtube.com/watch?v=U6ta7I5EKGE) | Країна Відкритого Коду |
 | короткое | 5 | [Вася Якеменко, Селигер - разговор по понятиям](https://www.youtube.com/watch?v=weSUCwyRfgY) | Ekatherina N+ |
 | короткое | 3 | [Видеоотчет «Безумный Мир». БОЛЬШОЙ РАЗГОВОР #ШВК  Василий Якеменко. 26.11.2018](https://www.youtube.com/watch?v=_pJaYJmXP2Y) | Большой Разговор |
-| короткое | 2 | [Еженедельный обзор "Рассерженных Горожан" \ Откровения Васи Якеменко](https://www.youtube.com/watch?v=W2fD2fXZg1M) | Рассерженные Горожане |
-| разбор/реакция | 15 | [Министр раскололся. Что рассказал чиновник Амирану Сардарову](https://www.youtube.com/watch?v=vRpSu2iJhxU) | Популярная политика |
 | короткое | 4 | [Настоящий Якеменко о Настоящем Путине!](https://www.youtube.com/watch?v=rg8LyrN5zD8) | Митинги Протесты |
-| Борис Якеменко | 3 | [Номинация «Духовность» — Борис Якеменко](https://www.youtube.com/watch?v=WsHrRjwckyY) | Фестиваль Кино |
-| короткое | 4 | [О кредитной системе](https://www.youtube.com/watch?v=ttfc-6H1Wf0) | Борис Якеменко |
-| короткое | 2 | [О растущем недоверии к власти](https://www.youtube.com/watch?v=j8mFCWr6v5M) | Борис Якеменко |
+| Борис Якеменко | 2 | [О растущем недоверии к власти](https://www.youtube.com/watch?v=j8mFCWr6v5M) | Борис Якеменко |
 | короткое | 2 | [После прочтения сжечь. Обсуждения смысла фильма с Василием Якеменко](https://www.youtube.com/watch?v=1HVWrHzrm-Y) |  |
 | короткое | 7 | [Почему нельзя говорить ПРАВДУ — Якеменко по понедельникам](https://www.youtube.com/watch?v=C6hxHR4D3i0) | Денис Царюк // Размышления |
 | Борис Якеменко | 8 | [Презентация учебника Бориса Якеменко "Практическая миссиология"](https://www.youtube.com/watch?v=8C2xXnqZG6U) | Борис Якеменко |
@@ -107,10 +103,12 @@
 | короткое | 1 | [Русская Пробежка - реклама от Василия Якеменко](https://www.youtube.com/watch?v=gJiqQRA0Kk4) | leotube4120 |
 | короткое | 4 | [Срок/The Term. Эпизод 51. Якеменко - Путин.](https://www.youtube.com/watch?v=KKaQboomJwA) | Srok Documentary |
 | короткое | 5 | [Срок/The Term. Эпизод 700. Якеменко, Собчак и немецкое порно.](https://www.youtube.com/watch?v=sZeFUsK79yQ) | Srok Documentary |
+| короткое | 4 | [Срок/The Term. Эпизод 701. "Девки сидят" - Якеменко о Пусси.](https://www.youtube.com/watch?v=KokFRAugnJ4) | Srok Documentary |
 | короткое | 6 | [Таинственное появление Василия Якеменко на Пермском](https://www.youtube.com/watch?v=-WGDbrhO1L0) | Телеканал Дождь |
 | короткое | 4 | [Форум Якеменко на Селигере - сюжет Рен-ТВ](https://www.youtube.com/watch?v=xnxRxNK62EU) | Pavel Elizarov |
 | короткое | 6 | [Фрагмент разбора фильма "Ворошиловский стрелок" Василий Якеменко](https://www.youtube.com/watch?v=VSzsSMfLhqM) |  |
 | короткое | 3 | [ЧТО ТАКОЕ ЗЛО ЯКЕМЕНКО](https://www.youtube.com/watch?v=8dhvimsvD98) | Люберецкий Вася |
+| короткое | 4 | [Якеменко дальше не повезут. Эпизод 703. Срок/The Term.](https://www.youtube.com/watch?v=8XbAXyYk1M0) | Srok Documentary |
 | короткое | 0 | [Янукович, Якименко и Лебедев выдают России секретную...](https://www.youtube.com/watch?v=qhyyyMHbL8o) | Подробиці |
 | короткое | 1 | [Ярослав Нилов о Якеменко Сеня Кайнов Seny Kaynov #SENYKAY](https://www.youtube.com/watch?v=dPF9Y0WZ-3g) | ЯтакДУМАЮ VIPCOMMENTS |
 | короткое | 5 | [якименко без прикрас](https://www.youtube.com/watch?v=O6dZ2q0-Po0) | wwwMSKRUwww |
